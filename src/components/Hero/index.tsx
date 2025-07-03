@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -38,19 +39,25 @@ const Hero = () => {
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
               <div className="mx-auto max-w-[800px] text-center">
+                <Image
+                  src="/images/logo/logo.svg"
+                  alt="logo"
+                  width={140}
+                  height={30}
+                  className="hidden w-full dark:block h-8 md:h-12 mb-16"
+                />
                 <h1 className="mb-5 text-4xl font-bold leading-tight text-black dark:text-white sm:text-5xl md:text-6xl animate-fade-in-up">
                   <span className="inline-block animate-float">Coming</span>{" "}
                   <span className="inline-block animate-float-delayed">Soon</span>
                 </h1>
-                <br/>
-                <p className="mb-8 text-lg leading-relaxed text-body-color dark:text-body-color-dark sm:text-xl md:text-2xl animate-fade-in-up-delayed">
+                <p className="mb-8 leading-relaxed text-body-color dark:text-body-color-dark text-base md:text-xl animate-fade-in-up-delayed">
                   Idin Studio is an agency for tech and UI/UX, founded by Ahmad Muhyidin (freelancer on Upwork). We specialize in building SaaS, MVPs, AI agents, IoT solutions, and more. Currently focused on Upwork, with broader offerings coming soon.
                 </p>
                 <br/>
                 <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 animate-fade-in-up-more-delayed">
                   <Link
                     href="https://www.upwork.com/freelancers/idindev"
-                    className="group relative rounded-md bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80 overflow-hidden transition-all hover:scale-105 hover:shadow-lg"
+                    className="group relative rounded-md bg-primary px-4 md:px-8 py-2.5 md:py-4 text-sm md:text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80 overflow-hidden transition-all hover:scale-105 hover:shadow-lg"
                     onMouseEnter={() => setIsHovering(true)}
                     onMouseLeave={() => setIsHovering(false)}
                   >
